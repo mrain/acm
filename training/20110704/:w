@@ -1,0 +1,18 @@
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+#include <queue>
+#include <vector>
+using namespace std;
+
+int tests;
+
+int main() {
+	scanf("%d", &tests);
+	while (tests --) {
+	}
+	return 0;
+}
+

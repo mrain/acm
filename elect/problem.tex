@@ -1,0 +1,37 @@
+\documentclass{article}
+\title{Inauguration of the President}
+\begin{document}
+\begin{center}
+    \LARGE{
+        \textbf{Inauguration of the President}
+    }\\[0.3cm]
+    \small{Timelimit: 1000ms\ \ \ \ Memorylimit: 128MB}
+\end{center}
+\section{Description}
+The inauguration ceremony for the new President will be hold on next monday. During the ceremony, the President has to travel around the Capital. \\
+There are (n + 1) west-east streets and (m + 1) north-south streets which divide the Capital into n * m blocks. It's clear that the Capital has (n + 1) * (m + 1) crossings (intersections of streets) . The President will start his travel from a crossing at the southmost street, and ends at a crossing at the northmost street. The President will never head south and he will not visit a crossing twice. \\
+The citizens will stand on both sides of every west-east street to see this ceremony. Between every two crossings contiguous on west-east streets there is a region. The capital has m * (n + 1) regions. When go throuth every region, it will cost some times and the President has to wave his hand. But the President can not wave his hand continuously for more than k minutes. \\
+The President will get some pleasure points during each visit to a region. While not every citizen supports the President, the pleasure points he got can be zero or negative. Please help the President to find a route which can maximize the pleasure points he can get.
+\section{Input Format}
+The first line contains 3 integers n, m and k. ($1 \leq n \leq 100, 1 \leq m \leq 10000$). \\
+The following 2 * (n + 1) lines, every two lines is the description to one west-east street (from north to south). \\
+The first line contains m integers stand for the pleasure points he can get during visit to these regions. The second lines contains m integers stand for the time he need to go through these regions. \\
+Every integers given will be at most $2^{31} - 1$
+\section{Output Format}
+The output contains only one line: the max pleasure points the President can get.
+\section{Sample Input}
+\begin{verbatim}
+    2 3 2
+    7 8 1
+    1 1 1
+    4 5 6
+    1 1 1
+    1 2 3
+    1 1 1
+\end{verbatim}
+\section{Sample Output}
+\begin{verbatim}
+    27
+\end{verbatim}
+\end{document}
+

@@ -1,0 +1,252 @@
+CII	
+2233 Say Cheese	Accepted
+2994 Heliport	Accepted
+4125 Painter	Accepted
+4127 The Sky is the Limit	Accepted
+4447 The Return of Carl	
+4448 Conduit Packing	
+4450 Deer-Proof Fence	Accepted
+
+HDU	
+1071 The area	Accepted
+1154 Cutting a Polygon	Accepted
+1221 Rectangle and Circle	Accepted
+1589 Stars Couple	Accepted
+2215 Maple trees	Accepted
+2366 Space	Accepted
+2436 Collision Detection	Accepted
+2693 3D Camera	Accepted
+2826 The troubles of lmy	Accepted
+2857 Mirror and Light	Accepted
+2872 Another Snake	Accepted
+2892 area	Accepted
+2893 cube	Accepted
+2898 旋转	Accepted
+2907 Diamond Dealer	Accepted
+2945 Wires	Accepted
+3021 Tree Fence	Accepted
+3025 Two Mirrors	
+3103 Shoring Up the Levees	Accepted
+3107 A Walk in the Park	Accepted
+3119 ChaeYeon	Accepted
+3124 Moonmist	Accepted
+3340 Rain in ACStar	Accepted
+HUST	
+1030 Fast and safe	
+1083 Union	Accepted
+1305 Hooked Triangle	Accepted
+1345 LL and ErBao	Accepted
+
+PKU	
+1031 Fence	Accepted
+1039 Pipe	Accepted
+1066 Treasure Hunt	Accepted
+1070 Deformed Wheel	
+1092 Farmland	Accepted
+1106 Transmitters	Accepted
+1113 Wall	Accepted
+1118 Lining Up	Accepted
+1127 Jack Straws	
+1133 Stars	
+1151 Atlantis	Accepted
+1225 STRICTLY INSCRIBED SIMILAR TRIANGLES	
+1228 Grandpa’s Estate	Accepted
+1259 The Picnic	Accepted
+1263 Reflections	Accepted
+1265 Area	Accepted
+1266 Cover an Arc	Accepted
+1269 Intersecting Lines	Accepted
+1271 Nice Milk	
+1279 Art Gallery	Accepted
+1294 Not Too Convex Hull	
+1319 Pipe Fitters	Accepted
+1347 Triangle	
+1361 JaWs	
+1371 Tin Cutter	
+1375 Intervals	Accepted
+1379 Run Away	Accepted
+1385 Lifting the Stone	Accepted
+1389 Area of Simple Polygons	Accepted
+1408 Fishnet	Accepted
+1410 Intersection	Accepted
+1418 Viva Confetti	Accepted
+1428 Hermes’ Colony	Accepted
+1434 Fill the Cisterns!	
+1444 Parallelepiped walk	
+1471 Triangles	
+1473 There’s Treasure Everywhere!	
+1474 Video Surveillance	Accepted
+1494 Sunrise	Accepted
+1499 Supercomputer Selection, The Sequel	
+1500 Polygonal Puzzle	Wrong Answer
+1514 Metal Cutting	
+1518 Problem Bee	
+1536 Trains	
+1556 The Doors DP	
+1569 Myacm Triangles	Accepted
+1584 A Round Peg in a Ground Hole	Accepted
+1586 Three Sides Make a Triangle	Accepted
+1605 Horse Shoe Scoring	
+1610 Quad Trees	Accepted
+1623 Squadtrees	
+1624 This Takes the Cake	
+1645 BSP Trees	Accepted
+1654 Area	Accepted
+1660 Princess FroG	
+1673 EXOCENTER OF A TRIANGLE	Accepted
+1685 Color Tunnels	
+1687 Buggy Sat	Accepted
+1688 Dolphin Pool	
+1693 Counting Rectangles	Accepted
+1696 Space Ant	Accepted
+1727 Advanced Causal Measurements (ACM)	
+1755 Triathlon	Accepted
+1758 Frontier	
+1765 November Rain	
+1774 Fold Paper Strips	
+1803 Box Art	
+1810 Covering	
+1813 Overlapped Shapes	Accepted
+1819 Disks	
+1834 线段处理	Accepted
+1843 Shire	
+1851 Map	
+1871 Bullet Hole	
+1873 The Fortified Forest	
+1875 Robot	
+1877 Flooded!	
+1881 Sail Race	
+1899 Farmer Bill’s Problem	Accepted
+1902 Illumination	
+1912 A highway and the seven dwarfs	
+1921 Paper Cut	
+1927 Area in Triangle	Accepted
+1931 Biometrics	
+1937 Balanced Food	
+1939 Diplomatic License	Accepted
+1940 Polygon Programming with Ease	Accepted
+1956 Pumps and Pipes	
+1971 Parallelogram Counting	Accepted
+1981 Circle and Points	Accepted
+1982 Water Tank	
+2007 Scrambled Polygon	Accepted
+2012 Triangle Cuts	
+2016 Ink Blots	
+2026 As the Crow Flies	
+2031 Building a Space Station MST	Accepted
+2036 I Conduit!	
+2043 Area of Polygons	
+2048 Monster Trap	
+2053 Square	
+2066 Minimax Triangulation	Accepted
+2069 Super Star	Accepted
+2074 Line of Sight	
+2079 Triangle	Accepted
+2087 Petanque	
+2098 Ellipse	
+2130 Jogging	
+2149 Inherit the Spheres	
+2150 Crossing Prisms	
+2164 Find the Border	Accepted
+2165 Gunman	Accepted
+2172 Bricks	
+2177 Ghost Busters	
+2187 Beauty Contest	Accepted
+2284 That Nice Euler Circuit	Accepted
+2318 TOYS	Accepted
+2398 Toy Storage	Accepted
+2420 A Star not a Tree?	Accepted
+2451 Uyuw’s Concert	Accepted
+2462 Cutting a polygon	Accepted
+2504 Bounding box	Accepted
+2540 Hotter Colder	
+2606 Rabbit hunt	Accepted
+2621 Parallelepiped	
+2622 Convex hull	
+2653 Pick-up sticks	Accepted
+2677 Tour	Accepted
+2686 Traveling by Stagecoach	
+2687 Earth Observation with a Mobile Robot Team	
+2693 Chocolate Chip Cookies	Accepted
+2737 Swamp Things	Accepted
+2747 Shy Polygons	
+2780 Linearity	Accepted
+2826 An Easy Problem?!	Accepted
+2839 Convex Hull and Triangle	
+2926 Requirements	Accepted
+2932 Coneology	Accepted
+2954 Triangle	Accepted
+3011 Secrets in Shadows	
+3129 How I Wonder What You Are!	
+3130 How I Mathematician Wonder What You Are!	Accepted
+3135 Polygons on the Grid	
+3148 ASCII Art	Accepted
+3151 Driving Directions	
+3285 Point of view in Flatland	Accepted
+3304 Segments	Accepted
+3301 Texas Trip	Accepted
+3334 Connected Gheeves	
+3335 Rotating Scoreboard	Accepted
+3347 Kadj Squares	Accepted
+3348 Cows	Accepted
+3384 Feng Shui	Accepted
+3407 Brookebond s’en va en guerre…	Accepted
+3410 Split convex polygon	Accepted
+3449 Geometric Shapes	
+3506 Walk	Accepted
+3512 Incidental Points	Accepted
+3525 Most Distant Point from the Sea	Accepted
+3549 GSM phone	
+3608 Bridge Across Islands	Accepted
+3714 Raid	Accepted
+3743 LL’s cake	Accepted
+SGU	
+253 Theodore Roosevelt	Accepted
+332 Largest Circle	Accepted
+SPOJ	
+34 RUNAWAY	Accepted
+40 STONE	Accepted
+73 BAC	Accepted
+149 FSHEEP	Accepted
+188 RECTNG1	Accepted
+228 SHAMAN	Accepted
+278 Bicycle	
+332 HARDQ	Accepted
+760 CH3D	Accepted
+1431 KPPOLY	Accepted
+1709 SWTHIN	Accepted
+1962 CIRCLES	
+2320 DISTANCE	Accepted
+2855 FOREST2	Accepted
+3415 SAMER08K	Accepted
+3576 BOYSCOUT	Accepted
+4156 PLAHTE	Accepted
+4408 FENCE1	Accepted
+4409 AREA1	Accepted
+4465 ANTTT	Accepted
+4661 SMAX	4分……
+4871 BRI	Accepted
+5147 FCSYS	Accepted
+5158 HEROARR	Accepted
+5159 IEXPOLRE	Accepted
+5240 GARDENAR	Accepted
+5453 ANARC09F	Accepted
+5469 HOUSES2	
+5902 CEOI09TR	
+6044 QCJ4	Accepted
+TJU	
+2847 How Far Can We Go	Accepted
+2986 Chaffy dish	Accepted
+3038 Walk	Accepted
+3168 Largest Fence	Accepted
+3452 Beacons	Accepted
+Ural	
+1010 Discrete Functions	Accepted
+1504 Good Manners	Accepted
+1520 Empire strikes back	Accepted
+1600 Airport	Accepted
+1640 Circle of Winter	Accepted
+1659 Regular Trianglesk	Accepted
+1753 Bookshelf	Accepted
+1754 Explosion in a Pyramid	Accepted
+

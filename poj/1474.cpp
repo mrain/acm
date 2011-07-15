@@ -55,7 +55,6 @@ inline double ang(const point &a) {
 typedef pair<point, point> halfplane;
 
 point intersect(const halfplane &a, const halfplane &b) {
-	//if (sgn(cross(a.first - a.second, b.first - b.second)) == 0) throw 0;
 	double k = cross(a.first - b.first, b.first - b.second);
 	k /= cross(a.first - a.second, b.first - b.second);
 	return a.first + (a.second - a.first) * k;
@@ -74,6 +73,9 @@ bool cmp(const halfplane &a, const halfplane &b) {
 	int res = sgn(ang(a.second - a.first) - ang(b.second - b.first));
 	return res == 0 ? satisfy(a.first, b) : res < 0;
 }
+bool parallel(const halfplane &a, const halfplane &b) {
+	return (sgn(cross(a.first - a.second, b.first - b.second)) == 0); 
+}
 
 vector <point> halfplaneIntersect(vector <halfplane> v) {
 	sort(v.begin(), v.end(), cmp);
@@ -86,12 +88,14 @@ vector <point> halfplaneIntersect(vector <halfplane> v) {
 			ans.pop_back(), q.pop_back();
 		while (ans.size() > 0 && !satisfy(ans.front(), v[i]))
 			ans.pop_front(), q.pop_front();
-		ans.push_back(intersect(q.back(), v[i]));
+		if (!parallel(q.back(), q.front()))
+			ans.push_back(intersect(q.back(), v[i]));
 		q.push_back(v[i]);
 	}
 	while (ans.size() > 0 && !satisfy(ans.back(), q.front()))
 		ans.pop_back(), q.pop_back();
-	ans.push_back(intersect(q.back(), q.front()));
+	if (!parallel(q.back(), q.front()))
+		ans.push_back(intersect(q.back(), q.front()));
 	return vector<point>(ans.begin(), ans.end());
 }
 
@@ -101,6 +105,7 @@ vector <point> res;
 int tests, n;
 
 int main() {
+	int ca = 0;
 	while (scanf("%d", &n), n) {
 		for (int i = 0; i < n; ++ i)
 			p[i].read();
@@ -109,7 +114,9 @@ int main() {
 		for (int i = 0; i < n; ++ i)
 			hp.push_back(halfplane(p[i], p[i + 1]));
 		res = halfplaneIntersect(hp);
-		cout << res.size() << endl;
+		printf("Floor #%d\n", ++ ca);
+		if (res.size() >= 1) puts("Surveillance is possible.");
+		else puts("Surveillance is impossible.");
 	}
 	return 0;
 }

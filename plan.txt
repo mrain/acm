@@ -19,7 +19,7 @@ HDU
 2826 The troubles of lmy	Accepted
 2857 Mirror and Light	Accepted
 2872 Another Snake	Accepted
-2892 area	Accepted
+#2892 area	Accepted
 2893 cube	Accepted
 2898 旋转	Accepted
 2907 Diamond Dealer	Accepted
@@ -189,7 +189,7 @@ PKU
 3335 Rotating Scoreboard	Accepted
 3347 Kadj Squares	Accepted
 3348 Cows	Accepted
-3384 Feng Shui	Accepted
+#3384 Feng Shui	Accepted
 3407 Brookebond s’en va en guerre…	Accepted
 3410 Split convex polygon	Accepted
 3449 Geometric Shapes	

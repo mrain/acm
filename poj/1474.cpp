@@ -82,20 +82,26 @@ vector <point> halfplaneIntersect(vector <halfplane> v) {
 	deque<halfplane> q;
 	deque<point> ans;
 	q.push_back(v[0]);
+	/*
+	for (int i = 0; i < (int)v.size(); ++ i)
+		cout << v[i].first << ' ' << v[i].second << ' ' << v[i].second - v[i].first << endl;
+		*/
 	for (int i = 1; i < (int)v.size(); ++ i) {
 		if (sgn(ang(v[i].second - v[i].first) - ang(v[i - 1].second - v[i - 1].first)) == 0) continue;
 		while (ans.size() > 0 && !satisfy(ans.back(), v[i]))
 			ans.pop_back(), q.pop_back();
 		while (ans.size() > 0 && !satisfy(ans.front(), v[i]))
 			ans.pop_front(), q.pop_front();
-		if (!parallel(q.back(), q.front()))
-			ans.push_back(intersect(q.back(), v[i]));
+		if (parallel(q.back(), v[i])) return vector<point>();
+		ans.push_back(intersect(q.back(), v[i]));
 		q.push_back(v[i]);
 	}
 	while (ans.size() > 0 && !satisfy(ans.back(), q.front()))
 		ans.pop_back(), q.pop_back();
-	if (!parallel(q.back(), q.front()))
-		ans.push_back(intersect(q.back(), q.front()));
+	while (ans.size() > 0 && !satisfy(ans.front(), q.front()))
+		ans.pop_front(), q.pop_front();
+	if (parallel(q.back(), q.front())) return vector<point>();
+	ans.push_back(intersect(q.back(), q.front()));
 	return vector<point>(ans.begin(), ans.end());
 }
 
@@ -115,7 +121,7 @@ int main() {
 			hp.push_back(halfplane(p[i], p[i + 1]));
 		res = halfplaneIntersect(hp);
 		printf("Floor #%d\n", ++ ca);
-		if (res.size() >= 1) puts("Surveillance is possible.");
+		if (res.size() >= 3) puts("Surveillance is possible.");
 		else puts("Surveillance is impossible.");
 	}
 	return 0;

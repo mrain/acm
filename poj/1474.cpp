@@ -44,6 +44,10 @@ inline double dot(const point &a, const point &b) {
 	return a.x * b.x + a.y * b.y;
 }
 
+inline double len(const point &a) {
+	return sqrt(dot(a, a));
+}
+
 inline double cross(const point &a, const point &b) {
 	return a.x * b.y - a.y * b.x;
 }
@@ -52,77 +56,56 @@ inline double ang(const point &a) {
 	return atan2(a.y, a.x);
 }
 
-typedef pair<point, point> halfplane;
-
-point intersect(const halfplane &a, const halfplane &b) {
-	double k = cross(a.first - b.first, b.first - b.second);
-	k /= cross(a.first - a.second, b.first - b.second);
-	return a.first + (a.second - a.first) * k;
-}
-
-inline bool satisfy(const point &a, const halfplane &b) {
-	return sgn(cross(a - b.first, b.second - b.first)) >= 0;
-}
-
 ostream &operator <<(ostream &os, const point &a) {
 	os << '(' << a.x << ',' << a.y << ')';
 	return os;
 }
 
-bool cmp(const halfplane &a, const halfplane &b) {
-	int res = sgn(ang(a.second - a.first) - ang(b.second - b.first));
-	return res == 0 ? satisfy(a.first, b) : res < 0;
-}
-bool parallel(const halfplane &a, const halfplane &b) {
-	return (sgn(cross(a.first - a.second, b.first - b.second)) == 0); 
+point intersect(const point &u1, const point &u2, const point &v1, const point &v2) {
+	double k = cross(u1 - v1, v1 - v2) / cross(u1 - u2, v1 - v2);
+	return u1 + (u2 - u1) * k;
 }
 
-vector <point> halfplaneIntersect(vector <halfplane> v) {
-	sort(v.begin(), v.end(), cmp);
-	deque<halfplane> q;
-	deque<point> ans;
-	q.push_back(v[0]);
-	/*
-	for (int i = 0; i < (int)v.size(); ++ i)
-		cout << v[i].first << ' ' << v[i].second << ' ' << v[i].second - v[i].first << endl;
-		*/
-	for (int i = 1; i < (int)v.size(); ++ i) {
-		if (sgn(ang(v[i].second - v[i].first) - ang(v[i - 1].second - v[i - 1].first)) == 0) continue;
-		while (ans.size() > 0 && !satisfy(ans.back(), v[i]))
-			ans.pop_back(), q.pop_back();
-		while (ans.size() > 0 && !satisfy(ans.front(), v[i]))
-			ans.pop_front(), q.pop_front();
-		if (parallel(q.back(), v[i])) return vector<point>();
-		ans.push_back(intersect(q.back(), v[i]));
-		q.push_back(v[i]);
-	}
-	while (ans.size() > 0 && !satisfy(ans.back(), q.front()))
-		ans.pop_back(), q.pop_back();
-	while (ans.size() > 0 && !satisfy(ans.front(), q.front()))
-		ans.pop_front(), q.pop_front();
-	if (parallel(q.back(), q.front())) return vector<point>();
-	ans.push_back(intersect(q.back(), q.front()));
-	return vector<point>(ans.begin(), ans.end());
+bool parallel(const point &u1, const point &u2, const point &v1, const point &v2) {
+	return sgn(cross(u1 - u2, v1 - v2)) == 0;
 }
 
 point p[2000];
-vector <halfplane> hp;
 vector <point> res;
 int tests, n;
+
+void cut(vector <point> &p, const point &a, const point &b) {
+	static vector <point> l;
+	l.clear();
+	int n = (int)p.size();
+	for (int i = 0; i < n; ++ i) {
+		if (sgn(cross(p[i] - a, b - a)) > 0)
+			l.push_back(p[i]);
+		if (sgn(cross(p[i] - a, b - a) * cross(p[(i + 1) % n] - a, b - a)) <= 0 && !parallel(p[i], p[(i + 1) % n], a, b))
+			l.push_back(intersect(p[i], p[(i + 1) % n], a, b));
+	}
+	p.clear();
+	for (int i = 0; i < (int)l.size(); ++ i)
+		if (!i || sgn(len(l[i] - l[i - 1])) != 0)
+			p.push_back(l[i]);
+	if (p.size() > 1 && sgn(len(p[0] - p.back())) == 0)
+		p.pop_back();
+}
 
 int main() {
 	int ca = 0;
 	while (scanf("%d", &n), n) {
 		for (int i = 0; i < n; ++ i)
-			p[i].read();
-		p[n] = p[0];
-		hp.clear();
-		for (int i = 0; i < n; ++ i)
-			hp.push_back(halfplane(p[i], p[i + 1]));
-		res = halfplaneIntersect(hp);
+			p[i].read(), res.push_back(p[i]);
+		for (int i = 0; i < n; ++ i) {
+			cut(res, p[i], p[(i + 1) % n]);
+//			cout << res.size() << endl;
+//			for (int i = 0; i < (int)res.size(); ++ i)
+//				cout << res[i] << endl;
+		}
+		if (ca) puts("");
 		printf("Floor #%d\n", ++ ca);
-		if (res.size() >= 3) puts("Surveillance is possible.");
-		else puts("Surveillance is impossible.");
+		printf("Surveillance is %s.\n", res.size() ? "possible" : "impossible");
 	}
 	return 0;
 }

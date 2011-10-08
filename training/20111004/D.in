@@ -1,0 +1,28 @@
+1 6
+TGC 4
+
+4 1
+A -1
+T -2
+G -3
+C -4
+
+10 4
+ATG 4
+
+TGA -1
+TGC -1
+TGG -1
+TGT -1
+
+AAT -1
+CAT -1
+GAT -1
+TAT -1
+
+TATG 4
+
+3 5
+ACT 2
+CTG 3
+TGC 4

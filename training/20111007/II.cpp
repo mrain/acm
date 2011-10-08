@@ -1,0 +1,2 @@
+void remove(int c){
+}

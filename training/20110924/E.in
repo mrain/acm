@@ -1,0 +1,6 @@
+4 5
+change 1 4 2
+change 1 2 -1
+establish 1 2
+establish 2 4
+establish 1 4

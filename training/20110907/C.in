@@ -1,0 +1,33 @@
+2
+void greetingPX(){ printf("greeting Pan Xi"); }
+void idle(){}
+void goShoppingWithGirlFriend(){...}
+void playGames(){...}
+int main()
+{
+    if (today.isSunday())
+        idle();
+}
+#CODE-END
+void idle(){}
+void goShoppingWithGirlFriend(){...}
+void playGames(){...}
+void greetingXXY(){ printf("greeting Xue Xiaoyuan"); }
+int main()
+{
+    if (today.isSunday())
+        idle();
+}
+#CODE-END
+int main()
+{
+    if(today.isSunday())
+        playGames();
+}
+#CODE-END
+int main()
+{
+    if(today.isSunday())
+        goShoppingWithGirlFriend();
+}
+#CODE-END

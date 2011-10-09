@@ -1,4 +1,5 @@
 #include<cmath>
+#include <iostream>
 #include<cstdio>
 #include<vector>
 #include<cstdlib>
@@ -89,12 +90,10 @@ int n;
 circle c[31];
 vector<point> a;
 vector< pair<double,double> > h;
-int belong[2010];
-bool disable[31];
 bool check(point a,point b){
 	double ym=dot(a,b,b);
 	h.clear();
-	for(int i=1;i<=n;++i) if (!disable[i]) {
+	for(int i=1;i<=n;++i) {
 		point p1,p2;
 		int tmp=intersect(a,b,c[i],p1,p2);
 		if(tmp==1){
@@ -127,8 +126,6 @@ int main(){
 	for(scanf("%d",&_);_--;){
 		scanf("%d",&n);
 		a.clear();
-		memset(belong,0,sizeof(belong));
-		memset(disable, 0, sizeof(disable));
 		int S=0,T=1;
 		for(int i=1;i<=n;++i){
 			int x,y,r;
@@ -137,16 +134,8 @@ int main(){
 			if (i == 1 || i == n) a.push_back(point(x,y));
 			c[i].radis=r;
 		}
-		for (int i = 1; i <= n; ++ i)
-			for (int j = 1; j <= n; ++ j)
-				if (i != j) {
-					if (dis(c[i].center, c[j].center) < c[j].radis - c[i].radis - eps) {
-						disable[i] = true;
-						break;
-					}
-				}
 		for(int i=1;i<=n;++i)
-			for(int j=1;j<=n;++j) if (i != j && !disable[i] && !disable[j]){
+			for(int j=i + 1;j<=n;++j) {
 				point p1,p2;
 				int tmp=intersect(c[i],c[j],p1,p2);
 				//printf("%d %d %d\n", i, j, tmp);
@@ -158,17 +147,11 @@ int main(){
 		for(int i=0;i<a.size();++i) {
 			e[i].clear();
 			//printf("%.4f %.4f\n", a[i].x, a[i].y);
-			for (int j = 1; j <= n; ++ j)
-				if (sig(dis(a[i],c[j].center)-c[j].radis)<=0)
-					belong[i] |= (1<<(j-1));
-		}
-		if (belong[0] & belong[T]) {
-			printf("Case %d: %.4f\n", ++ cas, dis(a[0], a[T]));
-			continue;
 		}
 		for(int i=0;i<a.size();++i)
 			for(int j=i+1;j<a.size();++j)
-				if((belong[i] & belong[j]) || check(a[i],a[j])){
+				if(check(a[i],a[j])){
+printf("(%.4f, %.4f) -> (%.4f, %.4f), %.4f\n", a[i].x, a[i].y, a[j].x, a[j].y, dis(a[i], a[j]));
 					addEdge(i,j,dis(a[i],a[j]));
 					addEdge(j,i,dis(a[i],a[j]));
 				}

@@ -1,0 +1,59 @@
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+const int m = 21;
+long long f[100000], sum[100000];
+
+void init() {
+	f[0] = 1; f[1] = 1; f[2] = 3; f[3] = 12;
+	sum[0] = 1; sum[1] = 2; sum[2] = 5; sum[3] = 17;
+	for (int i = 4; ; ++ i) {
+//		memcpy(dp, f, sizeof(dp));
+		for (int a = 0; a < i; ++ a)
+			for (int b = 0; a + b < i; ++ b)
+//				cout << a << ' ' << b << ' ' << i - a - b - 1 << endl;
+				f[i] += f[a] * f[b] * f[i - a - b - 1];
+		sum[i] = sum[i - 1] + f[i];
+		//cout << i << ' ' << f[i] << ' '<< sum[i] << endl;
+		if (sum[i] > 1000000000000001ll) break;
+	}
+}
+
+int tests;
+long long n;
+
+long long calcdub(int cnt) {
+	long long ret = 0;
+	for (int i = 0; i <= cnt; ++ i)
+		for (int j = 0; i + j <= cnt; ++ j)
+			ret += f[i] * f[j];
+	return ret;
+}
+
+void print(long long id, int cnt) {
+	if (!id) return;
+	-- cnt;
+	int cntl = 0, cntm = 0;
+	long long idl = 0, idr = 0, t = 0;
+	while (t <= id) {
+		t += f[cntl] * calcdub(cnt - cntl);
+		++ cntl;
+	}
+}
+
+int main() {
+	init();
+	cin >> tests; int ca = 0;
+	while (tests --) {
+		cin >> n;
+		printf("Case #%d: ", ++ ca);
+		int cnt = lower_bound(sum, sum + 21, n + 1) - sum;
+		print(n + 1, cnt);
+		puts("");
+	}
+	return 0;
+}

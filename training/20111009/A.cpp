@@ -184,7 +184,7 @@ int main(){
 		point r1=a,r2=b,r3=c,r4=d;
 		double di=dis(r1,r2,r3,r4);
 		point l=r1,r=r2;
-		for(int cas=0;cas<300;++cas){
+		for(int cas=0;cas<100;++cas){
 			point m1=l+(r-l)/3.;
 			point m2=r-(r-l)/3.;
 			if(dis(m1,r3,r4)<dis(m2,r3,r4))r=m2;

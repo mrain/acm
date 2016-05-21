@@ -1,0 +1,101 @@
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+#include <set>
+#include <map>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+int tests, n;
+map <string, int> id;
+vector<string> line;
+vector <int> sentences[210];
+set <int> eng, french, tmpeng, tmpfr;
+vector <int> e[10000], w[10000];
+bool vis[10000];
+int me, mf;
+
+int getid(string word) {
+	if (id.count(word) == 0) {
+		int p = id.size();
+		id[word] = p;
+		return p;
+	} else return id[word];
+}
+
+void input() {
+	line.clear();
+	/*char c = getchar();
+	while (c != '\n') c = getchar();*/
+
+	string tmp = "";
+	char c = getchar();
+	while (c != '\n' && c != EOF) {
+		if (c == ' ') {
+			line.push_back(tmp);
+			tmp = "";
+		} else tmp += c;
+		c = getchar();
+	}
+	line.push_back(tmp);
+}
+
+
+int main() {
+	scanf("%d", &tests);
+	for (int T = 1; T <= tests; ++ T) {
+		id.clear(); eng.clear(); french.clear();
+		scanf("%d", &n);
+
+		char c = getchar();
+		while (c != '\n') c = getchar();
+
+		input();
+		for (string word : line) {
+			//cout << word << endl;
+			eng.insert(getid(word));
+		}
+		input();
+		for (string word : line) {
+			//cout << word << endl;
+			french.insert(getid(word));
+		}
+
+		memset(vis, 0, sizeof(vis));
+		for (int k = 0; k < n - 2; ++ k) {
+			input();
+
+			int l = line.size();
+			for (int i = 0; i < l; ++ i) {
+				int a = getid(line[i]);
+				sentences[k].push_back(i);
+			}
+		}
+		int m = n - 2;
+		int ans = 66666666;
+		for (int mask = 0; mask < (1 << m); ++ mask) {
+			int cur = 0;
+			tmpeng.clear();
+			tmpfr.clear();
+			for (int k = 0; k < m; ++ k)
+				if (mask & (1 << k)) {
+					for (int i = 0; i < sentences[k].size(); ++ i) {}
+						int word = sentences[k][i];
+						if (eng.count(word) != 0 || tmpeng.count(word) != 0) ++ cur;
+						if (fr.count(word) == 0) tmpfr.insert(word);
+					}
+				} else {
+					for (int i = 0; i < sentences[k].size(); ++ i) {}
+						int word = sentences[k][i];
+						if (fr.count(word) != 0 || tmpfr.count(word) != 0) ++ cur;
+						if (eng.count(word) == 0) tmpeng.insert(word);
+					}
+				}
+		}
+
+	}
+    return 0;
+}
